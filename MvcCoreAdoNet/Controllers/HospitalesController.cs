@@ -35,7 +35,9 @@ namespace MvcCoreAdoNet.Controllers
             this.repo.CreateHospital(hospital.IdHospital, hospital.Nombre
                 , hospital.Direccion, hospital.Telefono, hospital.Camas);
             ViewData["MENSAJE"] = "Hospital insertado";
-            return View();
+            //ESTO NOS LLEVA A LA VISTA INDEX.CSHTML
+            //DE NUESTRO CONTROLLER HospitalesController
+            return RedirectToAction("Index");
         }
 
         public IActionResult Update(int id)
@@ -52,6 +54,12 @@ namespace MvcCoreAdoNet.Controllers
                 , hospital.Telefono, hospital.Camas);
             ViewData["MENSAJE"] = "Hospital modificado";
             return View(hospital);
+        }
+
+        public IActionResult Delete(int id)
+        {
+            this.repo.DeleteHospital(id);
+            return RedirectToAction("Index");
         }
 
     }
