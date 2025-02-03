@@ -9,19 +9,5 @@ namespace MvcCoreAdoNet.Controllers
         {
             return View();
         }
-
-        public IActionResult EjemploSection()
-        {
-            return View();
-        }
-
-        public IActionResult VistaPersona()
-        {
-            Persona p = new Persona();
-            p.Nombre = "Alumno Core";
-            p.Email = "alumnocore@gmail.com";
-            p.Edad = 25;
-            return View(p);
-        }
     }
 }
