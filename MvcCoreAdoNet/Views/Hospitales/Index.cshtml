@@ -19,9 +19,8 @@
                 <td>@hospital.Direccion</td>
                 <td>@hospital.Telefono</td>
                 <td>
-                    @Html.ActionLink("Details", "Details"
-                             , "Hospitales",
-                             new { id = @hospital.IdHospital }) |
+                   <a asp-controller="Hospitales" asp-action="Details" asp-route-id="@hospital.IdHospital"
+                   class="btn btn-bd-primary">Details</a>|
                     @Html.ActionLink("Edit", "Update", "Hospitales"
                              , new { id = @hospital.IdHospital }) |
                     @Html.ActionLink("Delete", "Delete", "Hospitales"
